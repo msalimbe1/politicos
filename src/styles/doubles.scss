@@ -1,0 +1,22 @@
+@import "variables.scss";
+
+.container-doubles {
+  display: flex;
+  margin: $tile-margin;
+  margin: 0 auto;
+  text-align: center;
+  .left {
+    padding: $tile-padding;
+    border: $tileb;
+    height: $tileh;
+    width: $tilew;
+    // border: 1px red solid;
+  }
+  .right {
+    padding: $tile-padding;
+    border: $tileb;
+    height: $tileh;
+    width: $tilew;
+    // border: 1px blue solid;
+  }
+}

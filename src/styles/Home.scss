@@ -1,14 +1,13 @@
 @import "variables.scss";
 
-.container {
-  position: absolute;
-  top: $top + 10px;
-  left: 5%;
-  right: 5%;
+.container-home {
+  margin: $top + 10px auto 0 auto;
+  // width: 80%;
 
-  height: 1000px;
-  width: 90%;
   background-color: sandybrown;
   border: 1px black dashed;
-  overflow-y: scroll;
+  // overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
 }

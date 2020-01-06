@@ -1,0 +1,12 @@
+@import "variables.scss";
+
+.container-singles {
+  display: flex;
+  height: $singleh;
+  width: $singlew;
+  border: 1px green solid;
+  padding: $tile-padding;
+  margin: $tile-margin;
+  margin: 0 auto;
+  text-align: center;
+}
