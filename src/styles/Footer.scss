@@ -1,88 +1,11 @@
-@import 'variables.scss';
+@import "variables.scss";
 
-.footer-container {
-  // height: $footer-height;
+.container-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-
-  .left {
-    padding-left: $px-from-border;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    .terms,
-    .privacy {
-      margin-left: $px-from-border;
-      color: $black;
-      font-size: 1.08em;
-      font-weight: 400;
-
-      &:hover {
-        opacity: 0.68;
-      }
-    }
-  }
-
-  .right {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: $px-from-border;
-
-    .sign {
-      color: $black;
-      font-size: 1.08em;
-      font-weight: 400;
-      margin-right: $px-from-border/4;
-
-      .link {
-        text-decoration: none;
-        color: $primary-color;
-
-        &:hover {
-          color: $btn-cell-txt;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .footer-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
-    .left {
-      padding-left: $px-from-border/4;
-
-      .terms,
-      .privacy {
-        display: none;
-      }
-    }
-
-    .right {
-      padding-right: $px-from-border/5;
-
-      .sign {
-        text-align: right;
-        width: 60%;
-        font-size: 0.88em;
-        line-height: 1.2em;
-      }
-
-      .logo {
-        display: none;
-      }
-    }
-  }
+  background-color: red;
+  height: $bottom;
 }

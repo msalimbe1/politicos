@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from "react";
-import Footer from "./common/Footer";
 import Template from "./common/Template";
 
-// import "../styles/Home.scss";
+import "../styles/Home.scss";
 
 class Home extends Component {
   state = {};
@@ -10,7 +9,7 @@ class Home extends Component {
   render() {
     return (
       <Fragment>
-        <div> Hola</div>
+        <div className="container">Hola</div>
       </Fragment>
     );
   }

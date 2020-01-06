@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600&display=swap");
 
-$ibm-font: 'IBM Plex Sans', sans-serif;
+$top: 50px;
+$bottom: 50px;
+
+$ibm-font: "IBM Plex Sans", sans-serif;
 $bkg-color: #ffffff;
 
 $pri-txt-color: #171717;
@@ -11,7 +14,7 @@ $primary-color: #0062ff;
 $secondary-color: #c9deff;
 // $third-color : #5EBFC2;
 
-$background-img: url('../img/first-bkg.png');
+$background-img: url("../img/first-bkg.png");
 
 $px-from-border: 2em;
 
@@ -19,7 +22,7 @@ $grey-txt: #565656;
 
 $black: #252525;
 $blue: #051243;
-$lightblue: #418CFF;
+$lightblue: #418cff;
 $white: #ffffff;
 
 $footer-height: 7vh;

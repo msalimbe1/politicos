@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-// import "../../styles/Header.scss";
+import "../../styles/Header.scss";
 class Header extends Component {
   state = {};
 
   render() {
     const { settings } = this.props;
-    const login = settings ? settings.login : false;
+
     return (
-      <div className={`container-header ${login ? "gray" : "white"}`}>
+      <div className={`container-header`}>
         <a href="">
           <div className="title">Politicos</div>
         </a>
-        <div className="bee" />
       </div>
     );
   }

@@ -1,5 +1,5 @@
 applications:
-  - name: quotes
+  - name: politicos
     buildpacks:
       - sdk-for-nodejs
     command: npm start
