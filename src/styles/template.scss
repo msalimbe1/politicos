@@ -1,0 +1,31 @@
+.container-template {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  // height: 100vh;
+  width: 40vw;
+  background-color: #f3f3f3;
+}
+
+.white {
+  background-color: white;
+}
+.gray {
+  background-color: #f3f3f3;
+}
+
+@media screen and (max-width: 600px) {
+  .container-template {
+    width: 100vw;
+    // height: 100vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  _::-webkit-full-page-media,
+  _:future,
+  :root .safari_only_tmpl {
+    // margin-top: 36px;
+    // border: 1px solid salmon;
+  }
+}

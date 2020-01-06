@@ -1,0 +1,65 @@
+@import 'node_modules/carbon-components/scss/globals/scss/vars.scss';
+@import '@carbon/type/scss/type';
+@import 'overrides.scss';
+@import 'variables.scss';
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.container-empty {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  .hive {
+    height: 240px;
+    // width: 95%;
+  }
+
+  .map {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    // margin: 0 auto;
+    @include carbon--type-style('productive-heading-04');
+    font-size: 1.24rem !important;
+    line-height: 1.8rem;
+    text-align: center;
+    margin-bottom: 1em !important;
+  }
+
+  .body {
+    @include carbon--type-style('body-long-01');
+    text-align: center;
+  }
+
+  .another-btn {
+    padding: 8px;
+    height: 40px;
+    width: 60%;
+    background: $primary-color;
+    border-radius: 12px;
+
+    border: 1px solid $primary-color;
+    border-radius: 12px;
+    text-align: center;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    color: #ffffff;
+    margin: 0 20%;
+
+    &:hover {
+      background-color: $white;
+      color: $primary-color;
+    }
+  }
+}

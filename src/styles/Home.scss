@@ -1,0 +1,98 @@
+@import 'node_modules/carbon-components/scss/globals/scss/vars.scss';
+@import '_variables.scss';
+@import '_overrides.scss';
+@import './extends';
+@import '@carbon/type/scss/type';
+
+a {
+  text-decoration: none;
+  color: $pri-txt-color;
+}
+
+.container {
+  margin-bottom: auto;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    h1 {
+      @include carbon--type-style('heading-01');
+      margin: 1em 0 1.2em;
+      font-weight: 200;
+      align-items: center;
+    }
+
+    h2 {
+      margin: 0em;
+      @include carbon--type-style('productive-heading-04');
+      line-height: 1.08em;
+      text-align: center;
+    }
+  }
+
+  form {
+    height: 6.8vh;
+  }
+
+  .bx--btn {
+    min-height: 2rem;
+  }
+
+  .selectedTab {
+    @include carbon--type-style('heading-01');
+    border-bottom: 1px solid $primary-color !important;
+  }
+  .tablist {
+    margin-top: 0.7em;
+    display: flex;
+    justify-content: space-evenly;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .tab {
+    width: 46%;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    border-bottom: 1px solid gray;
+  }
+  .react-tabs {
+    margin: 0 auto;
+    width: 40vw;
+  }
+  // .react-tabs__tab-panel {
+  // overflow: scroll;
+  // }
+  .react-tabs__tab-panel--selected {
+    margin: 0 auto;
+    width: 100%;
+    overflow: auto;
+    height: 88vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    .react-tabs {
+      margin: 0 auto;
+      width: 100vw;
+      // .tabpanel {
+      //   overflow: auto;
+      //   height: 100%;
+      // }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  _::-webkit-full-page-media,
+  _:future,
+  :root .safari_only {
+    margin-top: 36px;
+  }
+}

@@ -1,0 +1,53 @@
+@import '@carbon/type/scss/type';
+@import 'node_modules/carbon-components/scss/globals/scss/vars.scss';
+@import 'variables.scss';
+@import 'extends.scss';
+
+.container-login {
+  margin: 0 auto;
+  height: 88.8vh;
+
+  .bx--modal-content {
+    width: 95%;
+    .bx--form-item {
+      .bx--form__helper-text {
+        margin-top: 24px;
+      }
+    }
+  }
+  .bx--text-area__wrapper {
+    width: 100%;
+  }
+
+  .title {
+    @include carbon--type-style('productive-heading-04');
+  }
+
+  .disclaimer {
+    @include carbon--type-style('label-01');
+  }
+
+  .button-row {
+    margin-top: 2em;
+  }
+
+  .forgot {
+    background-color: transparent;
+    color: $primary-color;
+    // @include carbon--type-style('label-01');
+    // color: $primary-color;
+    cursor: pointer;
+    border-width: 0;
+    border-style: transparent;
+  }
+
+  .forgot:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    color: $hover-primary-text;
+  }
+  .bx--btn--primary:focus {
+    border-color: $btn-cell-txt;
+    outline-color: transparent;
+  }
+}

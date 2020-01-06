@@ -1,0 +1,102 @@
+@import 'variables.scss';
+
+.bx--btn{
+  min-height: 1em;
+}
+
+.bx--form__helper-text{
+  font-style: normal !important;
+  text-align: left !important;
+  margin: .8em 0 1.2em !important;
+  font-size: 1em !important;
+}
+
+.report-issue-link {
+  position: absolute;
+  bottom: $footer-height;
+  margin: 2px;
+}
+
+.container-issues {
+  position: absolute;
+  // width: 100px;
+  height: 200px;
+  bottom: $footer-height + 1vh;
+  border-radius: 12px;
+  margin: 10px;
+  padding: 10px;
+
+  //button
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+  }
+  z-index: -2;
+
+  .textarea-issues {
+    z-index: 10;
+  }
+}
+
+.draw {
+  transition: color 0.25s;
+  color: $lightblue;
+
+  &::before,
+  &::after {
+    border: 2px solid transparent;
+    border-radius: 12px;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &::after {
+    top: 0;
+    left: 0;
+  }
+}
+
+.meet {
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+
+  &:hover::before {
+    border-top-color: $lightblue;
+    border-right-color: $lightblue;
+  }
+
+  &:hover::after {
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
+      height 0.25s ease-out 0.75s;
+  }
+
+  &:hover::after {
+    border-bottom-color: $lightblue;
+    border-left-color: $lightblue;
+    transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+  }
+}

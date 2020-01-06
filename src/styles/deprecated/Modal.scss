@@ -1,0 +1,30 @@
+@import 'variables.scss';
+@import '@carbon/type/scss/type';
+
+.bx--modal-container{
+  background-color: $white !important;
+
+  .bx--modal-header__heading{
+    text-align: left;
+  }
+
+  .modal-text{
+    text-align: left;
+    padding-bottom: 1.4em;
+  }
+
+  .bx--modal-footer{
+    background-color: none !important;
+
+    .bx--btn--primary, .bx--btn--secondary{
+      display: flex !important;
+      justify-content: center !important;
+      height: 3em !important;
+      border-radius: 1px !important;
+      padding: 0 .4em !important;
+      transition: all 300ms ease-in-out !important;
+      margin: 0 .4em;
+    }
+  }
+}
+

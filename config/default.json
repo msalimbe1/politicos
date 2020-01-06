@@ -1,0 +1,7 @@
+{
+  "port": "5000",
+  "host": "localhost",
+  "protocol": "http",
+  "db": "mongodb://localhost/quotes",
+  "requiresAuth": true
+}
