@@ -5,9 +5,9 @@ Joi.objectId = require("joi-objectid")(Joi);
 
 const inputSchema = new Schema({
   author: { type: String, required: true, trim: true },
+  titles: [{ type: String, required: true, trim: true }],
   texts: [{ type: String, trim: true }],
   dates: [{ type: Date, default: Date.now }],
-  titles: [{ type: String, required: true, trim: true }],
   sources: [{ type: String, trim: true }],
   links: [{ type: String, trim: true }],
   tags: [{ type: String, trim: true }],
@@ -21,9 +21,9 @@ const Input = mongoose.model("Input", inputSchema);
 function validateInputSchema(quote) {
   const schema = {
     author: Joi.string().required(),
+    titles: Joi.array().required(),
     texts: Joi.array().required(),
     dates: Joi.array().required(),
-    titles: Joi.array().required(),
     sources: Joi.array().required(),
     links: Joi.array().required()
   };
