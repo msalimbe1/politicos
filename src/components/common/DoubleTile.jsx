@@ -1,8 +1,7 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import ReactPlayer from "react-player";
 
 import { dayText } from "../../util/datetime";
-
 import { osURL } from "../../config.json";
 
 import "../../styles/doubles.scss";
@@ -25,6 +24,7 @@ const DoubleTile = ({ data }) => {
                   <img src={`${osURL}${avatars[n]}`} alt="new" />
                 </div>
                 <div className="fecha">{dayText(dates[n])}</div>
+                <div className="title">{authors[n]}</div>
                 <div className="title">{titles[n]}</div>
                 <div className="player">
                   <ReactPlayer url={`${osURL}${media[n]}`} controls />

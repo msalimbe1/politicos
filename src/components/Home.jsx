@@ -23,11 +23,13 @@ class Home extends Component {
       <Fragment>
         <div className="container-home">
           {data.map((d, i) => {
-            return <DoubleTile data={d} key={i} />;
+            console.log("map", d, d.authors.length);
+            return d.authors.length > 1 ? (
+              <DoubleTile data={d} key={i} />
+            ) : (
+              <SingleTile data={d} key={i} />
+            );
           })}
-          <SingleTile />
-          <DoubleTile />
-          <SingleTile />
         </div>
       </Fragment>
     );
