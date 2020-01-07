@@ -1,13 +1,13 @@
-const { Quote, validate } = require("../models/quote");
+const { Input, validate } = require("../models/input");
 
 const express = require("express");
 const router = express.Router();
 
-// router.get("/", async (req, res) => {
-//   const booking = await Booking.find();
-//   console.log("Getting all bookings...");
-//   res.send(booking);
-// });
+router.get("/", async (req, res) => {
+  const inputs = await Input.find();
+  console.log("Getting all bookings...");
+  res.send(inputs);
+});
 
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
@@ -23,7 +23,7 @@ router.get("/:id", async (req, res) => {
 router.get("/tags/:id", async (req, res) => {
   const { id } = req.params;
   console.log("req.params", req.params);
-  
+
   const quotes = await Quote.find({
     // $or: [
     //   { tags: { $in: id } },
@@ -39,15 +39,33 @@ router.post("/", async (req, res) => {
   //Validation
   console.log(req.body);
   const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) return res.status(400).send(error);
 
-  const { text, author, source, tags, links } = req.body;
+  const {
+    authors,
+    avatars,
+    titles,
+    texts,
+    dates,
+    media,
+    links,
+    tags
+  } = req.body;
 
-  const quote = new Quote({ text, author, source, tags, links });
+  const input = new Input({
+    authors,
+    avatars,
+    titles,
+    texts,
+    dates,
+    media,
+    links,
+    tags
+  });
 
-  await quote.save();
+  await input.save();
 
-  return res.status(200).send(quote);
+  return res.status(200).send(input);
 });
 
 // router.delete("/:id", async (req, res) => {

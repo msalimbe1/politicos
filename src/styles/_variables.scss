@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600&display=swap");
 
 $top: 50px;
-$bottom: 50px;
+$bottom: 35px;
+$general-width: 90vw;
 
 $tileb: 1px grey dashed;
-$tilew: 350px;
-$tileh: 200px;
+$tilew: 40vw;
+$tileh: 350px;
 
-$singlew: 70vw;
-$singleh: 200px;
+$bradius: 0.8rem;
 
-$tile-padding: 5px;
-$tile-margin: 10px;
+$singlew: 80vw;
+$singleh: 350px;
+
+$tile-padding: 15px;
+$tile-margin: 15px;

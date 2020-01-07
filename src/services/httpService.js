@@ -1,21 +1,21 @@
-import axios from 'axios';
+import axios from "axios";
 
-import { baseURL } from '../config.json';
+import { baseURL } from "../config.json";
 
 axios.defaults.baseURL =
-  process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : baseURL;
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : baseURL;
 
-axios.defaults.headers.common['Cache-Control'] = 'no-cache';
+axios.defaults.headers.common["Cache-Control"] = "no-cache";
 
 axios.interceptors.response.use(null, error => {
-  console.log('axios interceptor triggered...');
+  console.log("axios interceptor triggered...");
   const expectedError =
     error.response &&
     error.response.status >= 400 &&
     error.response.status < 500;
 
   if (!expectedError) {
-    console.log('unexpected: ', error.response.data);
+    console.log("unexpected: ", error.response.data);
     return Promise.reject(error);
   }
   console.log(error.response);
@@ -24,7 +24,7 @@ axios.interceptors.response.use(null, error => {
 });
 
 function setJwt(jwt) {
-  if (jwt) axios.defaults.headers.common['office-mobile-token'] = jwt;
+  if (jwt) axios.defaults.headers.common["politicos-token"] = jwt;
 }
 
 export default {

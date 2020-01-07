@@ -2,21 +2,42 @@
 
 .container-doubles {
   display: flex;
-  margin: $tile-margin;
   margin: 0 auto;
-  text-align: center;
+  border-radius: $bradius;
+
   .left {
     padding: $tile-padding;
     border: $tileb;
     height: $tileh;
     width: $tilew;
-    // border: 1px red solid;
+    border-radius: $bradius;
+    margin: 10px;
+    .gridtile {
+      display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 5fr;
+      height: 100%;
+    }
+    .gridtile > div {
+      border: 1px red solid;
+    }
   }
   .right {
     padding: $tile-padding;
     border: $tileb;
     height: $tileh;
     width: $tilew;
+    border-radius: $bradius;
+    margin: 10px;
     // border: 1px blue solid;
+    .gridtile {
+      display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 5fr;
+      height: 100%;
+    }
+    .gridtile > div {
+      border: 1px blue solid;
+    }
   }
 }

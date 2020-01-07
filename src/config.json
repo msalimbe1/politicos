@@ -1,0 +1,4 @@
+{
+  "baseURL": "http://localhost:3000/",
+  "osURL": "https://s3.us-south.cloud-object-storage.appdomain.cloud/politicos/"
+}

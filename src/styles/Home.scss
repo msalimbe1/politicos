@@ -1,16 +1,21 @@
 @import "variables.scss";
 
 .container-home {
-  margin: $top + 10px auto 0 auto;
-  // width: 80%;
+  margin-top: $top / 2;
+  width: 90vw;
 
-  background-color: sandybrown;
-  border: 1px black dashed;
-  // overflow-y: scroll;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+  border: 0.5px gray dashed;
+  overflow-y: scroll;
 
   display: flex;
   flex-direction: column;
-
+  flex-wrap: wrap;
+  justify-content: space-between;
   -webkit-overflow-scrolling: auto;
-  overflow-x: auto;
+  // overflow-x: auto;
 }

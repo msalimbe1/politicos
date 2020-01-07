@@ -1,5 +1,5 @@
 const express = require("express");
-// const quotes = require("../routes/quotes");
+const inputs = require("../routes/inputs");
 const home = require("../routes/home");
 const error = require("../middleware/error");
 
@@ -7,7 +7,7 @@ module.exports = function(app) {
   app.use(express.json());
 
   app.use("/", home);
-  // app.use("/api/quotes", quotes);
+  app.use("/api/inputs", inputs);
 
   app.use(error);
 };

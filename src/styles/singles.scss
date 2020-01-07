@@ -4,9 +4,10 @@
   display: flex;
   height: $singleh;
   width: $singlew;
-  border: 1px green solid;
+  border: 1px blue solid;
+  border-radius: $bradius;
   padding: $tile-padding;
-  margin: $tile-margin;
-  margin: 0 auto;
+
+  margin: 10px auto;
   text-align: center;
 }

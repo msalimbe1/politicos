@@ -8,9 +8,7 @@ class Header extends Component {
 
     return (
       <div className={`container-header`}>
-        <a href="">
-          <div className="title">Politicos</div>
-        </a>
+        <div className="title">P O L I T I C O S</div>
       </div>
     );
   }
