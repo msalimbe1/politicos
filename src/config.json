@@ -1,4 +1,4 @@
 {
-  "baseURL": "https://politicos-salimbene.ig-openshift-26562a7d6831df3dfa02975385757d2d-0001.us-south.containers.appdomain.cloud/",
+  "baseURL": "https://politicos-salimbene.ig-openshift-26562a7d6831df3dfa02975385757d2d-0001.us-south.containers.appdomain.cloud",
   "osURL": "https://s3.us-south.cloud-object-storage.appdomain.cloud/politicos/"
 }
