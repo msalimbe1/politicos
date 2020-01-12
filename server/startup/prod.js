@@ -19,9 +19,11 @@ module.exports = function(app) {
       console.log("Secure request", req.secure);
       next();
     } else {
-      // console.log(JSON.stringify(req));
-      // console.log(JSON.stringify(req.headers));
-      // console.log(JSON.stringify(req.url));
+      console.log("request object");
+      console.log(req);
+      console.log(JSON.stringify(req));
+      console.log(JSON.stringify(req.headers));
+      console.log(JSON.stringify(req.url));
       console.log(`redirect to ... https://${req.headers}${req.url}`);
       res.redirect(`https://${req.headers}${req.url}`);
     }
