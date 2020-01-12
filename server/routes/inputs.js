@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   const inputs = await Input.find();
-  console.log("Getting all bookings...");
+  console.log("Getting all inputs...");
   res.send(inputs);
 });
 

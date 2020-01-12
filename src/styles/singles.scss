@@ -7,7 +7,7 @@
   }
 
   padding: $tile-padding;
-  width: $tilew * 2.1;
+  width: 50vw;
   margin: 10px auto;
   background-color: lightskyblue;
 
@@ -61,7 +61,7 @@
   .container-doubles {
     .tile {
       padding: $tile-padding;
-      width: 100%;
+      width: 100vw;
 
       .gridtile {
         .fecha {
