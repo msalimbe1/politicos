@@ -22,7 +22,12 @@ const SingleTile = ({ data }) => {
         <div className="title">{authors[0]}</div>
         <div className="subtitle">{titles[0]}</div>
         <div className="player">
-          <ReactPlayer url={`${osURL}${media[0]}`} controls />
+          <ReactPlayer
+            className="video"
+            url={`${osURL}${media[0]}`}
+            controls
+            width="100%"
+          />
         </div>
         <div className="text">{texts[0]}</div>
         <div className="links">
