@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-grow: 9999;
-  margin: 0 auto;
+  margin: 10 auto;
   border: 1px lightpink solid;
 
   .tile:nth-child(1) {
@@ -68,10 +68,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .container-doubles {
+  .container-tweets {
     .tile {
-      padding: $tile-padding;
-      width: 100vw;
+      padding: $mobile-padding;
+      margin: $mobile-margin;
+      width: $mobile-width;
 
       .gridtile {
         .fecha {

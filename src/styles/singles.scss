@@ -58,10 +58,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .container-doubles {
+  .container-singles {
     .tile {
-      padding: $tile-padding;
-      width: 100vw;
+      padding: $mobile-padding;
+      margin: $mobile-margin;
+      width: $mobile-width;
 
       .gridtile {
         .fecha {
