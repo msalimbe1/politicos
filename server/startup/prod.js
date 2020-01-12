@@ -20,12 +20,12 @@ module.exports = function(app) {
       next();
     } else {
       console.log("request object");
-      console.log(req);
-      console.log(JSON.stringify(req));
-      console.log(JSON.stringify(req.headers));
-      console.log(JSON.stringify(req.url));
-      console.log(`redirect to ... https://${req.headers}${req.url}`);
-      res.redirect(`https://${req.headers}${req.url}`);
+      console.log(req.headers);
+      console.log(req.url);
+      console.log(req.host);
+
+      console.log(`redirect to ... https://${req.headers.host}/`);
+      res.redirect(`https://${req.headers.host}/`);
     }
   });
   // }
