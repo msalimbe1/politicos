@@ -10,9 +10,13 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 COPY . .
 RUN npm install
+RUN npm install react-scripts@3.0.1 -g --silent
 RUN npm run build
 
 EXPOSE 5000
 EXPOSE 443
 
 CMD [ "node", "server/server.js" ]
+
+FROM node:10
+
