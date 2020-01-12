@@ -5,6 +5,8 @@ import { baseURL } from "../config.json";
 axios.defaults.baseURL =
   process.env.NODE_ENV === "development" ? "http://localhost:3000" : baseURL;
 
+console.log("baseURL", axios.defaults.baseURL);
+
 axios.defaults.headers.common["Cache-Control"] = "no-cache";
 
 axios.interceptors.response.use(null, error => {
