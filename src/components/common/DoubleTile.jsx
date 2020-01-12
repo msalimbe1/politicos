@@ -20,14 +20,19 @@ const DoubleTile = ({ data }) => {
           return (
             <div className="tile">
               <div className="gridtile">
+                <div className="fecha">{dayText(dates[n])}</div>
                 <div className="avatar">
                   <img src={`${osURL}${avatars[n]}`} alt="new" />
                 </div>
-                <div className="fecha">{dayText(dates[n])}</div>
                 <div className="title">{authors[n]}</div>
-                <div className="title">{titles[n]}</div>
+                <div className="subtitle">{titles[n]}</div>
                 <div className="player">
-                  <ReactPlayer url={`${osURL}${media[n]}`} controls />
+                  <ReactPlayer
+                    className="video"
+                    url={`${osURL}${media[n]}`}
+                    controls
+                    width="100%"
+                  />
                 </div>
                 <div className="text">{texts[n]}</div>
                 <div className="links">

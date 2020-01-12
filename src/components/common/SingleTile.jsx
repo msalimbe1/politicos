@@ -20,7 +20,7 @@ const SingleTile = ({ data }) => {
         </div>
         <div className="fecha">{dayText(dates[0])}</div>
         <div className="title">{authors[0]}</div>
-        <div className="title">{titles[0]}</div>
+        <div className="subtitle">{titles[0]}</div>
         <div className="player">
           <ReactPlayer url={`${osURL}${media[0]}`} controls />
         </div>
