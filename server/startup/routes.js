@@ -6,7 +6,6 @@ const error = require("../middleware/error");
 module.exports = function(app) {
   app.use(express.json());
 
-  app.use("/", home);
   app.use("/api/inputs", inputs);
 
   app.use(error);

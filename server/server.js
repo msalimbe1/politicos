@@ -31,7 +31,7 @@ if (env === "development") {
   console.log("morgan enabled");
 } else {
   log(chalk.red("you are in P R O D"));
-  // require("./startup/prod")(app);
+  require("./startup/prod")(app);
 }
 
 log(chalk.cyan(`host: ${host}\nport: ${port}\nenvironment: ${env}`));
