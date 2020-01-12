@@ -22,7 +22,7 @@ module.exports = function(app) {
       console.log("request object");
       console.log(req.headers);
       console.log(req.url);
-      console.log(req.host);
+      console.log(req.hostname);
 
       console.log(`redirect to ... https://${req.headers.host}/`);
       res.redirect(`https://${req.headers.host}/`);
