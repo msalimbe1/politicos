@@ -24,7 +24,7 @@ function validateInputSchema(input) {
     authors: Joi.array().required(),
     avatars: Joi.array().required(),
     titles: Joi.array().required(),
-    texts: Joi.array().required(),
+    texts: Joi.array(),
     dates: Joi.array().required(),
     media: Joi.array().required(),
     links: Joi.array().required(),

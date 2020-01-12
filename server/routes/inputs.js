@@ -52,6 +52,8 @@ router.post("/", async (req, res) => {
     tags
   } = req.body;
 
+  dates.map((date, ind) => (dates[ind] = new Date(date).toISOString()));
+
   const input = new Input({
     authors,
     avatars,

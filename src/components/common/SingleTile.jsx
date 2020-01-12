@@ -9,8 +9,8 @@ import "../../styles/singles.scss";
 const SingleTile = ({ data }) => {
   if (!data) return "Loading...";
   const { authors, avatars, titles, texts, dates, media, links, tags } = data;
-  console.log("SingleTile");
-  console.log(`${osURL}${authors[0]}`);
+
+  const link = new URL(links[0]).hostname;
 
   return (
     <div className="container-singles">
@@ -26,8 +26,9 @@ const SingleTile = ({ data }) => {
         </div>
         <div className="text">{texts[0]}</div>
         <div className="links">
+          ref.
           <a href={links[0]} target="_blank">
-            Link
+            {link}
           </a>
           {}
         </div>

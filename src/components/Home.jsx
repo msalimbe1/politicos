@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Template from "./common/Template";
 import DoubleTile from "./common/DoubleTile";
+import DoubleTweet from "./common/DoubleTweet";
 import SingleTile from "./common/SingleTile";
 
 import { getInputs } from "../services/apiService";
@@ -25,7 +26,11 @@ class Home extends Component {
           {data.map((d, i) => {
             console.log("map", d, d.authors.length);
             return d.authors.length > 1 ? (
-              <DoubleTile data={d} key={i} />
+              d.authors[0][0] === "@" ? (
+                <DoubleTweet data={d} key={i} />
+              ) : (
+                <DoubleTile data={d} key={i} />
+              )
             ) : (
               <SingleTile data={d} key={i} />
             );
