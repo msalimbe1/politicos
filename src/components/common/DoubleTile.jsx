@@ -13,11 +13,11 @@ const DoubleTile = ({ data }) => {
   return (
     <Fragment>
       <div className="container-doubles">
-        <div className="fecha">{dayText(dates[0])}</div>
+        {/* <div className="fecha">{dayText(dates[0])}</div> */}
         <div className="title">{authors[0]}</div>
         <div className="subtitle">{titles[0]}</div>
+
         {[0, 1].map((n, i) => {
-          console.log("links", links[n]);
           const link = new URL(links[n]).hostname;
           return (
             <div className="tile" key={i}>
@@ -28,6 +28,7 @@ const DoubleTile = ({ data }) => {
                     url={`${osURL}${media[n]}`}
                     controls
                     width="100%"
+                    height=""
                   />
                 </div>
                 <div className="text">{texts[n]}</div>
@@ -41,6 +42,7 @@ const DoubleTile = ({ data }) => {
             </div>
           );
         })}
+
         {/* {tags.map((tag, i) => {
           return <div className="tags">{tag}</div>;
         })} */}

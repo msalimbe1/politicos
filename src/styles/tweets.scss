@@ -2,34 +2,24 @@
 @import "extends.scss";
 
 .container-tweets {
-  > div * {
-    margin-bottom: 5px;
-  }
-
   display: flex;
   flex-wrap: wrap;
   flex-grow: 9999;
-  margin: 10 auto;
-  border: 1px lightblue solid;
 
-  .tile:nth-child(1) {
-    background-color: white;
-  }
-  .tile:nth-child(2) {
-    background-color: lightskyblue;
-  }
+  // .tile:nth-child(1) {
+  //   background-color: white;
+  // }
+  // .tile:nth-child(2) {
+  //   background-color: lightskyblue;
+  // }
 
   .tile {
-    flex-grow: 1;
     padding: $tile-padding;
-
     border-bottom: 1px lightgray solid;
-    margin: 10px;
 
     .gridtile {
       display: grid;
-      grid-template-columns: $avatar-maxw 1fr;
-      justify-items: left;
+      flex-direction: column;
 
       .fecha {
         @extend .fecha;
@@ -37,18 +27,12 @@
 
       .title {
         @extend .title;
-        grid-column: 1/3;
       }
       .subtitle {
         @extend .subtitle;
-        grid-column: 1/3;
       }
       .tweets {
-        grid-column: 1/3;
         width: 100%;
-        > img {
-          max-width: 100%;
-        }
       }
       .text {
         @extend .text;
@@ -58,8 +42,8 @@
       }
     }
   }
-
   .tags {
+    display: flex;
     padding: 5px;
     background-color: cyan;
     border: 1px cyan solid;

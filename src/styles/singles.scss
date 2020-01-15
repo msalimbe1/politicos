@@ -2,33 +2,16 @@
 @import "extends.scss";
 
 .container-singles {
-  > div * {
-    margin-bottom: 5px;
-  }
-
-  padding: $tile-padding;
-
-  margin: 10px auto;
-  background-color: lightskyblue;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 9999;
 
   .gridtile {
     display: grid;
-    grid-template-columns: $avatar-maxw 1fr;
+    flex-direction: column;
 
     .fecha {
       @extend .fecha;
-    }
-    .avatar {
-      grid-row: 2/4;
-      display: flex;
-      > img {
-        border-radius: 50%;
-        display: block;
-        max-width: $avatar-maxw;
-        max-height: 95px;
-        width: auto;
-        height: auto;
-      }
     }
     .title {
       @extend .title;
@@ -37,12 +20,12 @@
       @extend .subtitle;
     }
     .player {
-      grid-column: 1/3;
+      padding: 15px;
       justify-self: center;
     }
     .text {
       @extend .text;
-      font-size: 1.5em;
+      // font-size: 1.5em;
     }
     .links {
       @extend .links;

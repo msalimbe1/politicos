@@ -15,7 +15,7 @@ const SingleTile = ({ data }) => {
   return (
     <div className="container-singles">
       <div className="gridtile">
-        <div className="fecha">{dayText(dates[0])}</div>
+        {/* <div className="fecha">{dayText(dates[0])}</div> */}
         <div className="title">{authors[0]}</div>
         <div className="subtitle">{titles[0]}</div>
         <div className="player">

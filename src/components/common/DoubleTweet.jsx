@@ -14,14 +14,14 @@ const DoubleTweet = ({ data }) => {
   return (
     <Fragment>
       <div className="container-tweets">
+        {/* <div className="fecha">{dayText(dates[0])}</div> */}
+        {/* <div className="title">{authors[0]}</div>
+        <div className="subtitle">{titles[0]}</div> */}
         {[0, 1].map((n, i) => {
           const link = new URL(links[n]).hostname;
           return (
             <div className="tile" key={i}>
               <div className="gridtile">
-                <div className="fecha">{dayText(dates[0])}</div>
-                <div className="title">{authors[n]}</div>
-                <div className="subtitle">{titles[n]}</div>
                 <div className="tweets">
                   <img src={`${osURL}${media[n]}`} alt="lala" />
                 </div>
