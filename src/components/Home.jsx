@@ -1,9 +1,22 @@
 import React, { Component, Fragment } from "react";
+import ReactPlayer from "react-player";
 import Template from "./common/Template";
 import DoubleTile from "./common/DoubleTile";
 import DoubleTweet from "./common/DoubleTweet";
 import SingleTile from "./common/SingleTile";
 
+import {
+  VerticalTimeline,
+  VerticalTimelineElement
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+
+import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
+import FormatQuoteOutlinedIcon from "@material-ui/icons/FormatQuoteOutlined";
+import TwitterIcon from "@material-ui/icons/Twitter";
+
+import { osURL } from "../config.json";
+import { dayText } from "../util/datetime";
 import { getInputs } from "../services/apiService";
 
 import "../styles/Home.scss";
@@ -18,23 +31,57 @@ class Home extends Component {
 
   render() {
     const { data } = this.state;
-    console.log("render", data);
     if (!data) return "Loading...";
     return (
       <Fragment>
         <div className="container-home">
-          {data.map((d, i) => {
-            console.log("map", d, d.authors.length);
-            return d.authors.length > 1 ? (
-              d.authors[0][0] === "@" ? (
-                <DoubleTweet data={d} key={i} />
-              ) : (
-                <DoubleTile data={d} key={i} />
-              )
-            ) : (
-              <SingleTile data={d} key={i} />
-            );
-          })}
+          <VerticalTimeline className="vertical" layout="1-column">
+            {data.map((input, ind) => {
+              console.log(input);
+              const {
+                authors,
+                avatars,
+                titles,
+                texts,
+                dates,
+                media,
+                links,
+                tags
+              } = input;
+              const link = new URL(links[0]).hostname;
+              const tweet = authors[0].includes("@");
+              const video = media[0].includes("mp4");
+              const double = authors.length > 1;
+              return (
+                <VerticalTimelineElement
+                  key={ind}
+                  className="vertical-timeline-element--work"
+                  contentStyle={{
+                    background: "rgb(33, 150, 243)"
+                    // color: "#fff"
+                  }}
+                  contentArrowStyle={{
+                    borderRight: "7px solid  rgb(33, 150, 243)"
+                  }}
+                  // date={}
+                  iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+                  icon={
+                    <div className="avatar">
+                      <img src={`${osURL}${avatars[0]}`} alt="new" />
+                    </div>
+                  }
+                >
+                  {tweet ? (
+                    <DoubleTweet data={input} />
+                  ) : double ? (
+                    <DoubleTile data={input} />
+                  ) : (
+                    <SingleTile data={input} />
+                  )}
+                </VerticalTimelineElement>
+              );
+            })}
+          </VerticalTimeline>
         </div>
       </Fragment>
     );

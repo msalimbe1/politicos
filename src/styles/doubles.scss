@@ -22,7 +22,7 @@
   .tile {
     flex-grow: 1;
     padding: $tile-padding;
-    width: $tilew;
+    // width: $tilew;
     border-bottom: 1px lightgray solid;
     margin: 10px;
 
@@ -64,8 +64,8 @@
       }
     }
   }
-
   .tags {
+    display: flex;
     padding: 5px;
     background-color: cyan;
     border: 1px cyan solid;

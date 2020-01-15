@@ -15,9 +15,6 @@ const SingleTile = ({ data }) => {
   return (
     <div className="container-singles">
       <div className="gridtile">
-        <div className="avatar">
-          <img src={`${osURL}${avatars[0]}`} alt="new" />
-        </div>
         <div className="fecha">{dayText(dates[0])}</div>
         <div className="title">{authors[0]}</div>
         <div className="subtitle">{titles[0]}</div>

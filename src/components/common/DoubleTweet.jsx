@@ -19,10 +19,7 @@ const DoubleTweet = ({ data }) => {
           return (
             <div className="tile" key={i}>
               <div className="gridtile">
-                <div className="fecha">{dayText(dates[n])}</div>
-                {/* <div className="avatar">
-                  <img src={`${osURL}${avatars[n]}`} alt="new" />
-                </div> */}
+                <div className="fecha">{dayText(dates[0])}</div>
                 <div className="title">{authors[n]}</div>
                 <div className="subtitle">{titles[n]}</div>
                 <div className="tweets">

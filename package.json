@@ -13,6 +13,8 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@material-ui/core": "^4.8.3",
+    "@material-ui/icons": "^4.5.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
@@ -36,6 +38,7 @@
     "react-dom": "^16.12.0",
     "react-player": "^1.14.2",
     "react-scripts": "3.3.0",
+    "react-vertical-timeline-component": "^2.5.0",
     "sass-loader": "^8.0.0",
     "serve-static": "^1.14.1",
     "winston": "^3.2.1"

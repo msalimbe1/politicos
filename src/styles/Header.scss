@@ -10,7 +10,7 @@
   width: 100%;
   background-color: cornflowerblue;
   height: $bottom + 10px;
-
+  z-index: 1000;
   .title {
     margin: auto;
     color: #ffffff;
