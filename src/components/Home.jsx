@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import ReactPlayer from "react-player";
 import Template from "./common/Template";
 import DoubleTile from "./common/DoubleTile";
 import DoubleTweet from "./common/DoubleTweet";
@@ -16,7 +15,6 @@ import FormatQuoteOutlinedIcon from "@material-ui/icons/FormatQuoteOutlined";
 import TwitterIcon from "@material-ui/icons/Twitter";
 
 import { osURL } from "../config.json";
-import { dayText } from "../util/datetime";
 import { getInputs } from "../services/apiService";
 
 import "../styles/Home.scss";
@@ -38,30 +36,20 @@ class Home extends Component {
           <VerticalTimeline className="vertical" layout="1-column">
             {data.map((input, ind) => {
               console.log(input);
-              const {
-                authors,
-                avatars,
-                titles,
-                texts,
-                dates,
-                media,
-                links,
-                tags
-              } = input;
-              const link = new URL(links[0]).hostname;
+              const { authors, avatars } = input;
               const tweet = authors[0].includes("@");
-              const video = media[0].includes("mp4");
               const double = authors.length > 1;
+
               return (
                 <VerticalTimelineElement
                   key={ind}
                   className="vertical-timeline-element--work"
-                  contentStyle={{
-                    background: "rgb(33, 150, 243)"
-                    // color: "#fff"
-                  }}
+                  // contentStyle={{
+                  //   background: "rgb(33, 150, 243)"
+                  //   // color: "#fff"
+                  // }}
                   contentArrowStyle={{
-                    borderRight: "7px solid  rgb(33, 150, 243)"
+                    borderRight: "7px solid lightblue"
                   }}
                   // date={}
                   iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
