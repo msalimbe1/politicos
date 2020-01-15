@@ -16,6 +16,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 
 import { osURL } from "../config.json";
 import { getInputs } from "../services/apiService";
+import { dayText } from "../util/datetime";
 
 import "../styles/Home.scss";
 
@@ -36,7 +37,7 @@ class Home extends Component {
           <VerticalTimeline className="vertical" layout="1-column">
             {data.map((input, ind) => {
               console.log(input);
-              const { authors, avatars } = input;
+              const { authors, avatars, dates } = input;
               const tweet = authors[0].includes("@");
               const double = authors.length > 1;
 
@@ -51,7 +52,7 @@ class Home extends Component {
                   contentArrowStyle={{
                     borderRight: "7px solid lightblue"
                   }}
-                  // date={}
+                  date={<div>Hola</div>}
                   iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
                   icon={
                     <div className="avatar">

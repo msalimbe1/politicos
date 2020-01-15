@@ -6,16 +6,17 @@
   flex-wrap: wrap;
   flex-grow: 9999;
 
-  .tile:nth-child(1) {
-    border-left: 1px gray solid;
-  }
-  .tile:nth-child(2) {
-    border-right: 1px red solid;
-  }
-
   .tile {
     padding: $tile-padding;
-    border-bottom: 1px lightgray solid;
+    width: 100%;
+    // border-bottom: 1px lightgray solid;
+
+    &:nth-child(even) {
+      border-left: 1px lightblue solid;
+    }
+    &:nth-child(odd) {
+      border-right: 1px lightskyblue solid;
+    }
 
     .gridtile {
       display: grid;
@@ -42,6 +43,7 @@
       }
     }
   }
+
   .tags {
     display: flex;
     padding: 5px;

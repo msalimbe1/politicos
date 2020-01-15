@@ -1,0 +1,15 @@
+.vertical-timeline-element-content .vertical-timeline-element-date {
+  position: absolute;
+  width: 100%;
+  top: -2px;
+  left: auto;
+  right: 100%;
+  text-align: center;
+  //   border: 1px gray solid;
+}
+
+@media only screen and (max-width: 600px) {
+  .vertical-timeline-element-content .vertical-timeline-element-date {
+    visibility: hidden;
+  }
+}

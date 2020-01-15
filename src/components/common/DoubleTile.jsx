@@ -13,9 +13,9 @@ const DoubleTile = ({ data }) => {
   return (
     <Fragment>
       <div className="container-doubles">
-        {/* <div className="fecha">{dayText(dates[0])}</div> */}
-        {/* <div className="title">{authors[0]}</div>
-        <div className="subtitle">{titles[0]}</div> */}
+        <div className="fecha">{dayText(dates[0])}</div>
+        <div className="title">{authors[0]}</div>
+        <div className="subtitle">{titles[0]}</div>
 
         {[0, 1].map((n, i) => {
           const link = new URL(links[n]).hostname;

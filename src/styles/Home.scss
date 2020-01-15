@@ -1,5 +1,6 @@
 @import "variables.scss";
 @import "extends.scss";
+@import "overrides.scss";
 
 .container-home {
   margin-top: $top / 2;
@@ -21,7 +22,7 @@
   // overflow-x: auto;
 
   .vertical {
-    width: 40vw;
+    width: $general-width;
   }
   .fecha {
     @extend .fecha;
@@ -63,7 +64,7 @@
 @media only screen and (max-width: 600px) {
   .container-home {
     .vertical {
-      width: 100%;
+      width: 90%;
     }
   }
 }
