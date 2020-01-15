@@ -6,16 +6,16 @@
   flex-wrap: wrap;
   flex-grow: 9999;
 
-  // .tile:nth-child(1) {
-  //   background-color: white;
-  // }
-  // .tile:nth-child(2) {
-  //   background-color: lightskyblue;
-  // }
+  .tile:nth-child(1) {
+    border-left: 1px lightblue solid;
+  }
+  .tile:nth-child(2) {
+    border-right: 1px lightskyblue solid;
+  }
 
   .tile {
     padding: $tile-padding;
-    border-bottom: 1px lightgray solid;
+    // border-bottom: 1px lightgray solid;
 
     .gridtile {
       display: grid;
