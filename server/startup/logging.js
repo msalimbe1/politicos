@@ -1,34 +1,31 @@
-require('express-async-errors');
+require("express-async-errors");
 
-const winston = require('winston');
+// const winston = require("winston");
 
-module.exports = function() {
-  const format = winston.format.combine(
-    winston.format.colorize(),
-    winston.format.json()
-  );
-
+module.exports = function (winston, env) {
   winston.exceptions.handle(
-    new winston.transports.Console({
-      format
-    }),
+    new winston.transports.Console(),
     new winston.transports.File({
-      filename: 'uncaughtException.log',
-      format: winston.format.simple()
+      filename: "uncaughtException.log",
     })
   );
 
   //subscription to process
-  process.on('uncaughtRejection', ex => {
+  process.on("uncaughtRejection", (ex) => {
     throw ex;
   });
 
-  winston.add(
-    new winston.transports.File({
-      filename: 'logfile.log',
-      level: 'error'
-    })
-  );
+  // const console = new winston.transports.Console({
+  //   level: "info",
+  //   format: winston.format.simple(),
+  // });
 
-  console.log('Winston loaded.');
+  const files = new winston.transports.File({
+    filename: "logfile.log",
+    level: "error",
+  });
+
+  winston.add(files); //.add(console)
+
+  if (env !== "test") console.log("[logging] winston loaded");
 };

@@ -1,7 +1,7 @@
 {
   "port": "5000",
-  "host": "localhost",
+  "host": "0.0.0.0",
   "protocol": "http",
-  "db": "mongodb://localhost/quotes",
-  "requiresAuth": true
+  "requiresAuth": true,
+  "jwtPrivateKey": "politicos_secret"
 }

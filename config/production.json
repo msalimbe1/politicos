@@ -1,5 +1,5 @@
 {
   "host": "0.0.0.0",
-  "db": "mongodb://ibm_cloud_72eeaef1_93ce_47a2_8290_312766833333:ac79d251e6f018deb2f12e149c1d91e5d08c06471a18054e82b7dcbe4cf28d75@ed50449f-d70f-4013-9c60-25e036de7605-0.66c11f9786bc40cfa3a0086f6582f2e7.databases.appdomain.cloud:31792,ed50449f-d70f-4013-9c60-25e036de7605-1.66c11f9786bc40cfa3a0086f6582f2e7.databases.appdomain.cloud:31792/politicos?authSource=admin&replicaSet=replset",
-  "protocol": "https"
+  "protocol": "https",
+  "dbHost": ""
 }
