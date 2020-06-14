@@ -1,6 +1,7 @@
 const helmet = require("helmet"); //Secure HTTP headers
 const compression = require("compression"); //Compreess request size
 const serveStatic = require("serve-static");
+const forceSsl = require("force-ssl-heroku");
 const path = require("path");
 const cwd = process.cwd();
 
@@ -20,6 +21,8 @@ module.exports = function (app) {
   const { PUBLIC_URL } = process.env;
 
   // Redirect to https if not running in docker
+
+  app.use(forceSsl);
   // !PUBLIC_URL &&
   //   app.use((req, res, next) => {
   //     if (req.secure) {
