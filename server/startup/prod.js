@@ -1,7 +1,6 @@
 const helmet = require("helmet"); //Secure HTTP headers
 const compression = require("compression"); //Compreess request size
 const serveStatic = require("serve-static");
-const forceSsl = require("force-ssl-heroku");
 const path = require("path");
 const cwd = process.cwd();
 
@@ -22,17 +21,16 @@ module.exports = function (app) {
 
   // Redirect to https if not running in docker
 
-  app.use(forceSsl);
-  // !PUBLIC_URL &&
-  //   app.use((req, res, next) => {
-  //     if (req.secure) {
-  //       log("[prod] secure request:", req.secure);
-  //       next();
-  //     } else {
-  //       log(`[prod] not secure, redirect to https://${req.headers}${req.url}`);
-  //       res.redirect(`https://${req.headers}${req.url}`);
-  //     }
-  //   });
+  !PUBLIC_URL &&
+    app.use((req, res, next) => {
+      if (req.secure) {
+        log("[prod] secure request:", req.secure);
+        next();
+      } else {
+        log(`[prod] not secure, redirect to http://${req.headers}${req.url}`);
+        res.redirect(`http://${req.headers}${req.url}`);
+      }
+    });
 
   // Serve static revved files with uncoditional cache
   app.use(
