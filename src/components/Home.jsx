@@ -6,7 +6,7 @@ import SingleTile from "./common/SingleTile";
 
 import {
   VerticalTimeline,
-  VerticalTimelineElement
+  VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
@@ -34,7 +34,8 @@ class Home extends Component {
     return (
       <Fragment>
         <div className="container-home">
-          <VerticalTimeline className="vertical" layout="1-column">
+          {(new Date() - new Date("03/20/20")) / (1000 * 60 * 60 * 24)}
+          {/* <VerticalTimeline className="vertical" layout="1-column">
             {data.map((input, ind) => {
               console.log(input);
               const { authors, avatars, dates } = input;
@@ -70,7 +71,7 @@ class Home extends Component {
                 </VerticalTimelineElement>
               );
             })}
-          </VerticalTimeline>
+          </VerticalTimeline> */}
         </div>
       </Fragment>
     );

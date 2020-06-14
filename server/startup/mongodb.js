@@ -1,4 +1,3 @@
-const fs = require("fs");
 const mongoose = require("mongoose");
 const config = require("config");
 
@@ -32,7 +31,7 @@ module.exports = async (env) => {
   const dbPass = !local ? config.get("DB_PASS") : "";
 
   const uri = !local
-    ? `mongodb://${dbUser}:${dbPass}@${dbHost}/${dbName}?authSource=admin&replicaSet=replset`
+    ? `mongodb://${dbUser}:${dbPass}@${dbHost}/${dbName}`
     : `mongodb://${dbHost}/${local}`;
 
   // if (!local) {
@@ -41,6 +40,7 @@ module.exports = async (env) => {
   // }
 
   try {
+    log(uri);
     await mongoose.connect(uri, options);
     log(
       `connected to ${dbName} on ${env} env at ${local ? "local" : "remote"}...`

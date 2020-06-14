@@ -18,9 +18,9 @@ const log = (text) =>
 app.use(cors());
 app.use(express.json());
 
-require("./startup/logging")(winston);
-require("./startup/routes")(app);
-require("./startup/mongodb")();
+require("./startup/logging")(winston, env);
+require("./startup/routes")(app, env);
+require("./startup/mongodb")(env);
 
 //Logging only on development environment
 const protocol = config.get("protocol");

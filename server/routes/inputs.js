@@ -9,31 +9,31 @@ router.get("/", async (req, res) => {
   res.send(inputs);
 });
 
-router.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  console.log("req.params", req.params);
+// router.get("/:id", async (req, res) => {
+//   const { id } = req.params;
+//   console.log("req.params", req.params);
 
-  const quotes = await Quote.find({
-    author: { $regex: `.*${id}.*`, $options: "i" }
-  });
+//   const quotes = await Quote.find({
+//     author: { $regex: `.*${id}.*`, $options: "i" }
+//   });
 
-  res.send(quotes);
-});
+//   res.send(quotes);
+// });
 
-router.get("/tags/:id", async (req, res) => {
-  const { id } = req.params;
-  console.log("req.params", req.params);
+// router.get("/tags/:id", async (req, res) => {
+//   const { id } = req.params;
+//   console.log("req.params", req.params);
 
-  const quotes = await Quote.find({
-    // $or: [
-    //   { tags: { $in: id } },
-    //   { tags: { $regex: `.*${id}.*`, $options: "i" } }
-    // ]
-    tags: { $regex: `.*${id}.*`, $options: "i" }
-  });
+//   const quotes = await Quote.find({
+//     // $or: [
+//     //   { tags: { $in: id } },
+//     //   { tags: { $regex: `.*${id}.*`, $options: "i" } }
+//     // ]
+//     tags: { $regex: `.*${id}.*`, $options: "i" }
+//   });
 
-  res.send(quotes);
-});
+//   res.send(quotes);
+// });
 
 router.post("/", async (req, res) => {
   //Validation
@@ -49,7 +49,7 @@ router.post("/", async (req, res) => {
     dates,
     media,
     links,
-    tags
+    tags,
   } = req.body;
 
   dates.map((date, ind) => (dates[ind] = new Date(date).toISOString()));
@@ -62,7 +62,7 @@ router.post("/", async (req, res) => {
     dates,
     media,
     links,
-    tags
+    tags,
   });
 
   await input.save();
