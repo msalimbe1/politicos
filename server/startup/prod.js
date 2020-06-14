@@ -17,20 +17,20 @@ module.exports = function (app) {
   log("serving static content: ", path.join(cwd, "build"));
 
   // PUBLIC_URL if running docker local
-  const { PUBLIC_URL } = process.env;
+  // const { PUBLIC_URL } = process.env;
 
   // Redirect to https if not running in docker
 
-  !PUBLIC_URL &&
-    app.use((req, res, next) => {
-      if (req.secure) {
-        log("[prod] secure request:", req.secure);
-        next();
-      } else {
-        log(`[prod] not secure, redirect to http://${req.headers}${req.url}`);
-        res.redirect(`http://${req.headers}${req.url}`);
-      }
-    });
+  // !PUBLIC_URL &&
+  //   app.use((req, res, next) => {
+  //     if (req.secure) {
+  //       log("[prod] secure request:", req.secure);
+  //       next();
+  //     } else {
+  //       log(`[prod] not secure, redirect to http://${req.headers}${req.url}`);
+  //       res.redirect(`http://${req.headers}${req.url}`);
+  //     }
+  //   });
 
   // Serve static revved files with uncoditional cache
   app.use(
