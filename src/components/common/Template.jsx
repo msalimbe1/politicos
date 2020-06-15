@@ -5,7 +5,7 @@ import "../../styles/template.scss";
 
 const Template = (Screen, settings) => {
   return () => (
-    <div className={`container-template`}>
+    <div className={`template__container`}>
       <Header settings={settings} />
       <Screen />
       <Footer settings={settings} />
