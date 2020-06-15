@@ -3,7 +3,7 @@
 @import "overrides.scss";
 
 .home__container {
-  margin-top: $top / 2;
+  margin-top: 25px;
   // width: 90vw;
 
   margin-left: auto;
@@ -20,51 +20,4 @@
   justify-content: space-between;
   -webkit-overflow-scrolling: auto;
   // overflow-x: auto;
-
-  .vertical {
-    width: $general-width;
-  }
-  .fecha {
-    @extend .fecha;
-  }
-
-  .title {
-    @extend .title;
-  }
-  .subtitle {
-    @extend .subtitle;
-  }
-
-  .avatar {
-    > img {
-      width: 60px;
-      height: 60px;
-      left: 50%;
-      margin-left: -30px;
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08),
-        0 3px 0 4px rgba(0, 0, 0, 0.05);
-      position: absolute;
-      top: 0;
-    }
-  }
-  .text {
-    @extend .text;
-    font-size: 1.5em;
-  }
-
-  .tweets {
-    width: 100%;
-    > img {
-      max-width: 100%;
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .container-home {
-    .vertical {
-      width: 90%;
-    }
-  }
 }

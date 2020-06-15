@@ -1,30 +1,27 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 
-// custom components
-import Template from "./common/Template";
+// contexts
+import TiniContext from "./context/tiniContext";
 
-//styles
+// hoc componentes
+import withTemplate from "./hoc/withTemplate";
+
+// hooks
+import useTitle from "./hooks/useTitle";
+
+// styles
 import "../styles/home.scss";
 
-class Home extends Component {
-  state = {};
+function Home() {
+  const { days } = useContext(TiniContext);
 
-  // async componentDidMount() {
-  //   const { data } = { data: "hola" }; //await getInputs();
-  //   this.setState({ data }, () => console.log(this.state));
-  // }
+  useTitle(days);
 
-  render() {
-    // const { data } = this.state;
-    // if (!data) return "Loading...";
-    return (
-      <Fragment>
-        <div className="home__container">
-          {(new Date() - new Date("03/20/20")) / (1000 * 60 * 60 * 24)}
-        </div>
-      </Fragment>
-    );
-  }
+  return (
+    <Fragment>
+      <div className="home__container">{days}</div>
+    </Fragment>
+  );
 }
 
-export default Template(Home);
+export default withTemplate(Home);

@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /files
+/mosh
 /.pnp
 .pnp.js
 
