@@ -9,6 +9,9 @@ import withTemplate from "./hoc/withTemplate";
 // hooks
 import useTitle from "./hooks/useTitle";
 
+// custom components
+import Counter from "./Counter";
+
 // styles
 import "../styles/home.scss";
 
@@ -19,7 +22,9 @@ function Home() {
 
   return (
     <Fragment>
-      <div className="home__container">{days}</div>
+      <div className="home__container">
+        <Counter days={days} />
+      </div>
     </Fragment>
   );
 }

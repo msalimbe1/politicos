@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 
-export default function useTitle(days) {
+function useTitle(days) {
   useEffect(() => {
     document.title = `cuarentini ${days}`;
 
     return () => {
-      console.log("Clean up");
+      console.log("Clean up ...");
     };
   });
 }
+
+export default useTitle;
