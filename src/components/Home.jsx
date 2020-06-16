@@ -22,7 +22,7 @@ function Home() {
 
   return (
     <Fragment>
-      <div className="home__container">
+      <div className="home__container centered">
         <Counter days={days} />
       </div>
     </Fragment>
