@@ -12,7 +12,7 @@ const Counter = ({ days, showTooltip }) => {
       {/* <img src={logo} alt="cuarentini" /> */}
       <div className="counter__helper">
         Días desde el inicio oficial de la cuarentena argentina el 20 de Marzo
-        2020.
+        de 2020.
       </div>
     </div>
   );
