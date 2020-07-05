@@ -11,6 +11,7 @@ import useTitle from "./hooks/useTitle";
 
 // custom components
 import Counter from "./Counter";
+import Quote from "./Quote";
 
 // styles
 import "../styles/home.scss";
@@ -23,7 +24,15 @@ function Home() {
   return (
     <Fragment>
       <div className="home__container centered">
-        <Counter days={days} />
+        {[...Array(days).keys()].reverse().map((day, ind) => {
+          console.log(day);
+          return (
+            <div className="home__container-day" key={ind}>
+              <Counter days={day} />
+              <Quote days={days} day={ind} />
+            </div>
+          );
+        })}
       </div>
     </Fragment>
   );

@@ -1,19 +1,30 @@
-.counter__container {
+.quote__container {
   display: flex;
   flex-direction: column;
-  // border: 1px blue solid;
-  font-size: 20rem;
-  word-break: break-all;
-  margin: auto;
-  text-align: center;
-  text-decoration: underline;
-  text-decoration-color: #1e90ff;
-  text-decoration-style: inherit;
-  // height: 100%;
+  justify-content: space-between;
+  text-align: justify;
+  width: 20rem;
   margin: 20px;
-  width: 100%;
+  padding: 25px;
+  //   border: 1px blue solid;
+  //   margin: auto;
 
-  .counter__helper {
+  &-date {
+    color: darkgray;
+    font-size: 1.5rem;
+  }
+
+  &-text {
+    font-style: italic;
+    word-break: break-all;
+    font-size: 3rem;
+  }
+  &-author {
+    font-size: 1.5rem;
+    font-style: oblique;
+  }
+
+  .quote__helper {
     font-size: 1rem;
     margin: 0;
     color: darkgray;
@@ -22,44 +33,44 @@
 }
 
 @media (max-width: 800px) {
-  .counter__container {
+  .quote__container {
     font-size: 16rem;
   }
 }
 
 // @media (min-width: 280px) {
-//   .counter__container {
+//   .quote__container {
 //     font-size: 16rem;
 //   }
 // }
 
 // @media (min-width: 330px) {
-//   .counter__container {
+//   .quote__container {
 //     font-size: 16rem;
 //   }
 // }
 
 // @media (min-width: 400px) {
-//   .counter__container {
+//   .quote__container {
 //     font-size: 16rem;
 //   }
 // }
 
 // @media (min-height: 700px) {
-//   .counter__container {
+//   .quote__container {
 //     font-size: 16rem;
 //   }
 // }
 
 // @media (min-height: 700px) and (orientation: landscape) {
-//   .counter__container {
+//   .quote__container {
 //     font-size: 16rem;
 //   }
 // }
 
 // /* iPhone 6 Plus portrait */
 // @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
-//   .counter__container {
+//   .quote__container {
 //     font-size: 16rem;
 //   }
 // }
