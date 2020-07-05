@@ -1,8 +1,8 @@
-import http from './httpService';
-import jwtDecode from 'jwt-decode';
+import http from "./httpService";
+import jwtDecode from "jwt-decode";
 
-const apiEndpoint = '/api/auth';
-const tokenKey = 'office-mobile-token';
+const apiEndpoint = "/api/auth";
+const tokenKey = "politicos-token";
 
 //adding x-auth-token, if any, to the headers.
 //Required to access protected api endpoints.
@@ -13,7 +13,7 @@ export async function login(mail, password) {
 
   const { data: jwt } = await http.post(`${apiEndpoint}`, {
     mail,
-    password
+    password,
   });
   // console.log(`${apiEndpoint}`, jwt);
   localStorage.setItem(tokenKey, jwt.token);
@@ -51,7 +51,7 @@ export default {
   getCurrentUser,
   loginWithJwt,
   getJwt,
-  checkLogin
+  checkLogin,
 };
 
 // const getTokenExpirationDate = token => {

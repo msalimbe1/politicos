@@ -1,4 +1,3 @@
 {
-  "baseURL": "http://www.cuarentini.com.ar",
-  "osURL": "https://s3.us-south.cloud-object-storage.appdomain.cloud/politicos/"
+  "baseURL": "http://www.cuarentini.com.ar"
 }
