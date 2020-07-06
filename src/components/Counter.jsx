@@ -5,7 +5,7 @@ import "../styles/counter.scss";
 // import logo from "../images/logo.png";
 
 const Counter = ({ days, showTooltip }) => {
-  console.log(showTooltip);
+  // console.log(showTooltip);
   return (
     <div className="counter__container">
       {`${days + 1}`}

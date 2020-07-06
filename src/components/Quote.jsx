@@ -2,25 +2,40 @@ import React from "react";
 import withBlock from "./hoc/withBlock";
 
 import "../styles/quote.scss";
-// import logo from "../images/logo.png";
 
-let options = { year: "numeric", month: "long", day: "numeric" };
+const options = { year: "numeric", month: "long", day: "numeric" };
 
-const Quote = ({ day }) => {
+const Quote = ({ quote, day }) => {
   const quoteDay = new Date();
-
   quoteDay.setDate(quoteDay.getDate() - day);
-  const quote = "Lorem ipsum dolor sit  ad";
-  const author = "Alberto Fernandez";
+
+  const { text, author, subtitle, link, twitter } = quote;
+
   return (
     <div className="quote__container">
       <div className="quote__container-date">
         {`${quoteDay.toLocaleDateString("es-ES", options)}`}
       </div>
       <br />
-      <div className="quote__container-text">{`"${quote}"`}</div>
+      <div className="quote__container-text">{`"${text}"`}</div>
       <br />
       <div className="quote__container-author">{`${author}`}</div>
+      <br />
+      <div className="quote__container-subtitle">{`${subtitle}`}</div>
+      <br />
+      <div className="quote__container-link">
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          {"source"}
+        </a>
+        {` | `}
+        <a
+          href={`https://twitter.com/${twitter}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {`@${twitter}`}
+        </a>
+      </div>
     </div>
   );
 };

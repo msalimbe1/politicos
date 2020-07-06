@@ -5,6 +5,7 @@ const { Schema } = mongoose;
 const quoteSchema = new Schema({
   text: { type: String, required: true, trim: true },
   author: { type: String, required: true, trim: true },
+  twitter: { type: String, required: true, trim: true },
   subtitle: { type: String, trim: true },
   link: { type: String, trim: true },
   date: { type: Date },
@@ -17,6 +18,7 @@ function validateQuoteSchema(input) {
   const schema = {
     text: Joi.string().required(),
     author: Joi.string().required(),
+    twitter: Joi.string(),
     subtitle: Joi.string(),
     link: Joi.string(),
     date: Joi.date(),

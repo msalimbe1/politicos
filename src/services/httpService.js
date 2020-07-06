@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { baseURL } from "../config.json";
+import { baseURL, token } from "../config.json";
 
 axios.defaults.baseURL =
   process.env.NODE_ENV === "development" ? "http://localhost:3000" : baseURL;
@@ -8,8 +8,9 @@ axios.defaults.baseURL =
 console.log("baseURL", axios.defaults.baseURL);
 
 axios.defaults.headers.common["Cache-Control"] = "no-cache";
+axios.defaults.headers.common["politicos-token"] = token;
 
-axios.interceptors.response.use(null, error => {
+axios.interceptors.response.use(null, (error) => {
   console.log("axios interceptor triggered...");
   const expectedError =
     error.response &&
@@ -25,14 +26,14 @@ axios.interceptors.response.use(null, error => {
   return Promise.reject(error);
 });
 
-function setJwt(jwt) {
-  if (jwt) axios.defaults.headers.common["politicos-token"] = jwt;
-}
+// function setJwt() {
+//   axios.defaults.headers.common["politicos-token"] = token;
+// }
 
 export default {
   get: axios.get,
   post: axios.post,
   put: axios.put,
   delete: axios.delete,
-  setJwt
+  // setJwt,
 };

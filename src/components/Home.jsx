@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 
 // contexts
 import TiniContext from "./context/tiniContext";
@@ -13,11 +13,39 @@ import useTitle from "./hooks/useTitle";
 import Counter from "./Counter";
 import Quote from "./Quote";
 
+// services
+import { getQuotes } from "../services/apiService";
+
 // styles
 import "../styles/home.scss";
 
+const searchQuote = (quotes, day) => {
+  const quoteDay = new Date();
+  quoteDay.setDate(quoteDay.getDate() - day);
+  quoteDay.setHours(-3, 0, 0, 0);
+
+  return (
+    quotes.find((q) => q.date === quoteDay.toISOString()) || {
+      text: "...",
+      author: "unknown",
+      subtitle: "...",
+      link: "#",
+      twitter: "jack",
+    }
+  );
+};
+
 function Home() {
+  const [quotes, setQuotes] = useState([]);
   const { days } = useContext(TiniContext);
+
+  useEffect(() => {
+    async function initQuotes() {
+      const { data } = await getQuotes();
+      setQuotes(data);
+    }
+    initQuotes();
+  }, []);
 
   useTitle(days);
 
@@ -25,11 +53,11 @@ function Home() {
     <Fragment>
       <div className="home__container centered">
         {[...Array(days).keys()].reverse().map((day, ind) => {
-          console.log(day);
+          const currentQuote = searchQuote(quotes, ind);
           return (
             <div className="home__container-day" key={ind}>
               <Counter days={day} />
-              <Quote days={days} day={ind} />
+              <Quote days={days} day={ind} quote={currentQuote} />
             </div>
           );
         })}

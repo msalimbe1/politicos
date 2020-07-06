@@ -1,3 +1,4 @@
 {
-  "baseURL": "http://www.cuarentini.com.ar"
+  "baseURL": "http://www.cuarentini.com.ar",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjAyNDU5MDM5NmI2NTBkZWU1Y2ZlYzMiLCJuYW1lIjoiTUFUSUFTIFNBTElNQkVORSIsIm1haWwiOiJtYXRpYXMuc2FsaW1iZW5lQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlzQWN0aXZlIjp0cnVlLCJpYXQiOjE1OTM5ODQ0MTJ9.oEfOMnjdsSZAT8GtRuetpxjml3ae_1DCwDTl_yniChQ"
 }
