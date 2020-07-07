@@ -76,7 +76,7 @@
       font-size: 1rem;
     }
     &-text {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
     &-author {
       font-size: 1rem;
@@ -87,6 +87,15 @@
     }
     &-subtitle {
       font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .quote__container {
+    &-subtitle {
+      font-size: 0.7rem;
+      text-align: left;
     }
   }
 }
