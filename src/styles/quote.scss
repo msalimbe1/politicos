@@ -36,7 +36,7 @@
       font-style: oblique;
     }
     &-src::before {
-      content: "⛲️ ";
+      content: "📂 ";
     }
     &-twitter {
       text-decoration: none;
@@ -44,7 +44,7 @@
       margin-left: 2rem;
     }
     &-twitter::before {
-      content: "🐦 ";
+      content: "🦉 ";
     }
   }
   &-subtitle {
@@ -112,6 +112,15 @@
     &-subtitle {
       font-size: 0.7rem;
       text-align: left;
+    }
+    &-link {
+      padding: 0px;
+      &-src::before {
+        content: "";
+      }
+      &-twitter::before {
+        content: "🦉 ";
+      }
     }
   }
 }
