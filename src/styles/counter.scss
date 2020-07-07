@@ -42,7 +42,11 @@
     font-size: 6rem;
   }
 }
-
+@media (max-width: 400px) {
+  .counter__container {
+    font-size: 4rem;
+  }
+}
 // @media (min-width: 280px) {
 //   .counter__container {
 //     font-size: 16rem;
