@@ -14,7 +14,7 @@ const Quote = ({ quote, day }) => {
   if (!text)
     return (
       <div className="quote__container">
-        <img src={lala} alt="lala" />
+        <img src={lala} alt="lala" className="loader" />
       </div>
     );
 
