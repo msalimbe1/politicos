@@ -26,19 +26,31 @@
     color: rgb(33, 72, 228);
   }
   &-link {
+    display: flex;
+    align-items: center;
     font-size: medium;
     padding: 2px;
+
     &-src {
       text-decoration: none;
       font-style: oblique;
     }
+    &-src::before {
+      content: "⛲️ ";
+    }
     &-twitter {
       text-decoration: none;
+      font-style: oblique;
+      margin-left: 2rem;
+    }
+    &-twitter::before {
+      content: "🐦 ";
     }
   }
   &-subtitle {
     font-size: 1rem;
     padding: 2px;
+    text-align: left;
   }
 
   .quote__helper {
@@ -46,6 +58,10 @@
     margin: 0;
     color: darkgray;
     text-decoration: none !important;
+  }
+
+  .quote__ico {
+    height: 1.5rem;
   }
 }
 
@@ -99,40 +115,3 @@
     }
   }
 }
-
-// @media (min-width: 280px) {
-//   .quote__container {
-//     font-size: 16rem;
-//   }
-// }
-
-// @media (min-width: 330px) {
-//   .quote__container {
-//     font-size: 16rem;
-//   }
-// }
-
-// @media (min-width: 400px) {
-//   .quote__container {
-//     font-size: 16rem;
-//   }
-// }
-
-// @media (min-height: 700px) {
-//   .quote__container {
-//     font-size: 16rem;
-//   }
-// }
-
-// @media (min-height: 700px) and (orientation: landscape) {
-//   .quote__container {
-//     font-size: 16rem;
-//   }
-// }
-
-// /* iPhone 6 Plus portrait */
-// @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
-//   .quote__container {
-//     font-size: 16rem;
-//   }
-// }

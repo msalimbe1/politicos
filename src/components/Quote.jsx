@@ -30,16 +30,16 @@ const Quote = ({ quote, day }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {"🕸 fuente"}
+          {"fuente"}
         </a>
-        {` `}
+
         <a
           className="quote__container-link-twitter"
           href={`https://twitter.com/${twitter}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {`🦉 ${twitter}`}
+          {`${twitter}`}
         </a>
       </div>
     </div>
