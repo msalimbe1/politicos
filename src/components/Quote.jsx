@@ -24,16 +24,22 @@ const Quote = ({ quote, day }) => {
       <div className="quote__container-subtitle">{`${subtitle}`}</div>
       <br />
       <div className="quote__container-link">
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          {"source"}
-        </a>
-        {` | `}
         <a
+          className="quote__container-link-src"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {"🕸 fuente"}
+        </a>
+        {` `}
+        <a
+          className="quote__container-link-twitter"
           href={`https://twitter.com/${twitter}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {`@${twitter}`}
+          {`🦉 ${twitter}`}
         </a>
       </div>
     </div>

@@ -1,6 +1,8 @@
 .block__container {
   display: flex;
   justify-content: center;
+  display: grid;
+  place-items: center;
   // border: 1px red solid;
   // width: 50vw;
   // margin: auto;

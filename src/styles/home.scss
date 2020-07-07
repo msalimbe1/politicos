@@ -13,6 +13,8 @@
   &-day {
     display: flex;
     justify-content: center;
+    border: outset;
+    margin: 50px;
     // margin: auto;
     width: 100%;
     // flex-wrap:
@@ -27,4 +29,21 @@
   left: 50vw;
   transform: translate(-50%, -50%);
   overflow: scroll;
+}
+
+@media (max-width: 1200px) {
+  .home__container {
+    &-day {
+      margin: 20px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .home__container {
+    &-day {
+      flex-direction: column;
+      border: outset;
+      margin: 10px;
+    }
+  }
 }

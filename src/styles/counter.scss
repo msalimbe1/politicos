@@ -6,9 +6,10 @@
   word-break: break-all;
   margin: auto;
   text-align: center;
-  text-decoration: underline;
-  text-decoration-color: #1e90ff;
-  text-decoration-style: inherit;
+  // text-decoration: underline;
+  // text-decoration-color: #1e90ff;
+  border-bottom: 0.5vw #1e90ff solid;
+  border-bottom-right-radius: 5%;
   // height: 100%;
   margin: 20px;
   width: 40vw;
@@ -21,9 +22,24 @@
   }
 }
 
-@media (max-width: 800px) {
+.counter__container::before {
+  content: "dia";
+  font-size: 0.1em;
+  text-align: left;
+  text-decoration: none !important;
+  text-decoration-color: lightgrey;
+  color: lightgrey;
+}
+
+@media (max-width: 1200px) {
   .counter__container {
-    font-size: 16rem;
+    font-size: 10rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .counter__container {
+    font-size: 6rem;
   }
 }
 
