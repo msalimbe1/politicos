@@ -2,7 +2,7 @@ import React from "react";
 import withBlock from "./hoc/withBlock";
 
 import "../styles/quote.scss";
-
+import lala from "../images/loader.svg";
 const options = { year: "numeric", month: "long", day: "numeric" };
 
 const Quote = ({ quote, day }) => {
@@ -10,6 +10,13 @@ const Quote = ({ quote, day }) => {
   quoteDay.setDate(quoteDay.getDate() - day);
 
   const { text, author, subtitle, link, twitter } = quote;
+
+  if (!text)
+    return (
+      <div className="quote__container">
+        <img src={lala} alt="lala" />
+      </div>
+    );
 
   return (
     <div className="quote__container">

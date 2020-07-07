@@ -24,15 +24,7 @@ const searchQuote = (quotes, day) => {
   quoteDay.setDate(quoteDay.getDate() - day);
   quoteDay.setHours(-3, 0, 0, 0);
 
-  return (
-    quotes.find((q) => q.date === quoteDay.toISOString()) || {
-      text: "...",
-      author: "unknown",
-      subtitle: "...",
-      link: "#",
-      twitter: "jack",
-    }
-  );
+  return quotes.find((q) => q.date === quoteDay.toISOString()) || {};
 };
 
 function Home() {
@@ -50,19 +42,17 @@ function Home() {
   useTitle(days);
 
   return (
-    <Fragment>
-      <div className="home__container centered">
-        {[...Array(days).keys()].reverse().map((day, ind) => {
-          const currentQuote = searchQuote(quotes, ind);
-          return (
-            <div className="home__container-day" key={ind}>
-              <Counter days={day} />
-              <Quote days={days} day={ind} quote={currentQuote} />
-            </div>
-          );
-        })}
-      </div>
-    </Fragment>
+    <div className="home__container centered">
+      {[...Array(days).keys()].reverse().map((day, ind) => {
+        const currentQuote = searchQuote(quotes, ind);
+        return (
+          <div className="home__container-day" key={ind}>
+            <Counter days={day} />
+            <Quote days={days} day={ind} quote={currentQuote} />
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
