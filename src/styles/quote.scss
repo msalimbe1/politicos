@@ -36,7 +36,7 @@
       font-style: oblique;
     }
     &-src::before {
-      content: "📂 ";
+      content: "🔗";
     }
     &-twitter {
       text-decoration: none;
@@ -44,7 +44,7 @@
       margin-left: 2rem;
     }
     &-twitter::before {
-      content: "🦉 ";
+      content: "@";
     }
   }
   &-subtitle {
@@ -115,7 +115,7 @@
         content: "";
       }
       &-twitter::before {
-        content: "🦉 ";
+        content: "@";
       }
     }
     .loader {
