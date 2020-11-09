@@ -37,18 +37,20 @@ function Home() {
       setQuotes(data);
     }
     initQuotes();
+    // const lala = window.location.pathname.substr(1);
+    // window.location.href = `id=${lala}`;
   }, []);
 
   useTitle(days);
 
   return (
     <div className="home__container centered">
-      {[...Array(days).keys()].reverse().map((day, ind) => {
+      {[...Array(234).keys()].reverse().map((day, ind) => {
         const currentQuote = searchQuote(quotes, ind);
         return (
-          <div className="home__container-day" key={ind}>
+          <div id={day + 1} className="home__container-day" key={ind}>
             <Counter days={day} />
-            <Quote days={days} day={ind} quote={currentQuote} />
+            <Quote days={234} day={ind} quote={currentQuote} />
           </div>
         );
       })}

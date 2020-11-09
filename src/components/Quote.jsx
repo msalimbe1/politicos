@@ -6,7 +6,7 @@ import lala from "../images/loader.svg";
 const options = { year: "numeric", month: "long", day: "numeric" };
 
 const Quote = ({ quote, day }) => {
-  const quoteDay = new Date();
+  const quoteDay = new Date("11/08/20");
   quoteDay.setDate(quoteDay.getDate() - day);
 
   const { text, author, subtitle, link, twitter } = quote;
