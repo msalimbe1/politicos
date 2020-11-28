@@ -31,7 +31,7 @@ module.exports = async (env) => {
   const dbPass = !local ? config.get("DB_PASS") : "";
 
   const uri = !local
-    ? `mongodb+srv://${dbUser}:${dbPass}@${dbHost}`
+    ? `mongodb+srv://${dbUser}:${dbPass}@${dbHost}?retryWrites=true&w=majority`
     : `mongodb+srv://${dbHost}/${local}`;
 
   // if (!local) {
