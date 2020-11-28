@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "5f024590396b650dee5cfec3"
+  },
+  "isAdmin": true,
+  "isActive": true,
+  "name": "MATIAS SALIMBENE",
+  "mail": "matias.salimbene@gmail.com",
+  "password": "$2b$10$kMs2NzVAjlNnjTKTnjPVXeExx0y/7qWrhIg5nnEb0n3j2AUEBtRSi",
+  "timestamp": {
+    "$date": "2020-07-05T21:26:40.346Z"
+  },
+  "__v": 0
+}]

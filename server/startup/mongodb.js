@@ -24,15 +24,15 @@ module.exports = async (env) => {
 
   const dbName = !local
     ? config.get(`DB_${env === "production" ? "PROD" : "DEV"}`)
-    : config.get("dbName");
+    : config.get("dbHost");
 
   const dbHost = !local ? config.get("DB_HOST") : config.get("dbHost");
   const dbUser = !local ? config.get("DB_USER") : "";
   const dbPass = !local ? config.get("DB_PASS") : "";
 
   const uri = !local
-    ? `mongodb://${dbUser}:${dbPass}@${dbHost}/${dbName}`
-    : `mongodb://${dbHost}/${local}`;
+    ? `mongodb+srv://${dbUser}:${dbPass}@${dbHost}`
+    : `mongodb+srv://${dbHost}/${local}`;
 
   // if (!local) {
   //   options.ssl = true;
