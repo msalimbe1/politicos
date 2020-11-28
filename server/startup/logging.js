@@ -27,5 +27,5 @@ module.exports = function (winston, env) {
 
   winston.add(files); //.add(console)
 
-  if (env !== "test") console.log("[logging] winston loaded");
+  console.log("[logging] winston loaded");
 };

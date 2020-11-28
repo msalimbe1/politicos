@@ -1,7 +1,0 @@
-{
-  "host": "localhost",
-  "dbHost": "localhost",
-  "dbName": "jest-test",
-  "auth": "polticos-token",
-  "token": ""
-}

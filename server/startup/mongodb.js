@@ -19,20 +19,14 @@ module.exports = async (env) => {
   };
 
   // Detecting if should conect to local mongo server
-  const local = env === "test";
-  log(`connecting to ${local ? "local" : "remote"} server ... `);
+  log(`connecting to mongo server ... `);
 
-  const dbName = !local
-    ? config.get(`DB_${env === "production" ? "PROD" : "DEV"}`)
-    : config.get("dbHost");
+  const dbName = config.get(`DB_PROD`);
+  const dbHost = config.get("DB_HOST");
+  const dbUser = config.get("DB_USER");
+  const dbPass = config.get("DB_PASS");
 
-  const dbHost = !local ? config.get("DB_HOST") : config.get("dbHost");
-  const dbUser = !local ? config.get("DB_USER") : "";
-  const dbPass = !local ? config.get("DB_PASS") : "";
-
-  const uri = !local
-    ? `mongodb+srv://${dbUser}:${dbPass}@${dbHost}?retryWrites=true&w=majority`
-    : `mongodb+srv://${dbHost}/${local}`;
+  const uri = `mongodb+srv://${dbUser}:${dbPass}@${dbHost}/${dbName}?retryWrites=true&w=majority`;
 
   // if (!local) {
   //   options.ssl = true;
@@ -42,11 +36,8 @@ module.exports = async (env) => {
   try {
     log(uri);
     await mongoose.connect(uri, options);
-    log(
-      `connected to ${dbName} on ${env} env at ${local ? "local" : "remote"}...`
-    );
+    log(`connected to ${dbName} on ${env} env at ${dbHost}...`);
   } catch (error) {
-    if (local) log("¿Did you start mongod demon?");
     log(error.message);
   }
 };

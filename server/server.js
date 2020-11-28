@@ -11,8 +11,7 @@ const app = express();
 const env = app.get("env");
 
 const chalk = require("chalk");
-const log = (text) =>
-  env !== "test" ? console.log(chalk.cyan(`[server] ${text}`)) : null;
+const log = (text) => console.log(chalk.cyan(`[server] ${text}`));
 
 //server setp
 app.use(cors());
