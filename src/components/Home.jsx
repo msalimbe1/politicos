@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 // contexts
 import TiniContext from "./context/tiniContext";
@@ -45,12 +45,12 @@ function Home() {
 
   return (
     <div className="home__container centered">
-      {[...Array(234).keys()].reverse().map((day, ind) => {
+      {[...Array(days).keys()].reverse().map((day, ind) => {
         const currentQuote = searchQuote(quotes, ind);
         return (
           <div id={day + 1} className="home__container-day" key={ind}>
             <Counter days={day} />
-            <Quote days={234} day={ind} quote={currentQuote} />
+            <Quote days={days} day={ind} quote={currentQuote} />
           </div>
         );
       })}
