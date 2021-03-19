@@ -20,7 +20,7 @@ import { getQuotes } from "../services/apiService";
 import "../styles/home.scss";
 
 const searchQuote = (quotes, day) => {
-  const quoteDay = new Date();
+  const quoteDay = new Date("2021-03-19T22:19:06.661Z");
   quoteDay.setDate(quoteDay.getDate() - day);
   quoteDay.setHours(-3, 0, 0, 0);
 
